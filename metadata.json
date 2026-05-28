@@ -1,0 +1,6 @@
+{
+  "name": "Luxury Company Profile",
+  "description": "Landing page profile perusahaan bernuansa premium, modern, dan luxury dengan navigasi interaktif, katalog produk, portfolio karya, testimonials slider, dan responsive mobile yang sempurna.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
