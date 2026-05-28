@@ -1,100 +1,178 @@
-import React, { useState } from "react";
-import { ArrowRight, ShieldCheck, Check } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import React from "react";
+import { MapPin, Phone, Instagram, Mail, ArrowUp } from "lucide-react";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    if (email) { setSubscribed(true); setEmail(""); setTimeout(() => setSubscribed(false), 4000); }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const el = document.querySelector(href);
-    if (el) { window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 85, behavior: "smooth" }); }
+    if (el) {
+      const headerOffset = 90;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+  };
+
+  const openWhatsApp = () => {
+    window.open("https://wa.me/6281234567890?text=Halo%20Kios%20Buku%20Masjid%20Agung%20Cianjur%2C%20saya%20ingin%20bertanya%20mengenai%20koleksi%20buku.", "_blank");
   };
 
   return (
-    <footer className="border-t pt-20 pb-12 font-sans relative overflow-hidden bg-green-950 text-white border-green-800/30">
+    <footer id="contact" className="border-t border-cream-200 bg-green-950 text-white pt-20 pb-12 font-sans relative overflow-hidden">
+      {/* Background decoration */}
       <div className="absolute top-[80%] left-[50%] -translate-x-1/2 w-[350px] h-[350px] rounded-full bg-green-700/10 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-16">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 items-start">
+        {/* Main Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Brand */}
+          {/* Brand & Address Column */}
           <div className="lg:col-span-4 space-y-6">
-            <a id="footer-logo" href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-tr from-green-500 to-green-300 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(22,163,74,0.3)] shrink-0">
+            <a id="footer-logo" href="#home" onClick={handleScrollToTop} className="flex items-center space-x-2.5">
+              <div className="w-8 h-8 bg-gradient-to-tr from-cream-400 to-cream-600 rounded-lg flex items-center justify-center shadow-md shrink-0">
                 <span className="text-green-950 font-display font-bold text-sm">ك</span>
               </div>
-              <span className="font-display font-bold text-sm tracking-[0.25em] text-white hover:text-green-300 transition-colors">KIOS BUKU</span>
+              <span className="font-display font-bold text-sm tracking-[0.2em] text-white hover:text-cream-400 transition-colors uppercase">
+                Kios Buku Masjid Agung
+              </span>
             </a>
-            <p className="text-xs font-light max-w-sm leading-relaxed text-green-300/60">
-              Koleksi buku original terlengkap di Cianjur. Mulai dari kitab Islami, buku sekolah, hingga novel sastra terbaik.
+            
+            <p className="text-xs font-light leading-relaxed text-green-200/60 max-w-sm">
+              Tempat bertemunya literasi, inspirasi, dan kecintaan pada buku di jantung Kota Cianjur. Menyediakan berbagai buku Islami, kitab kuning, novel, buku anak, dan umum original.
             </p>
-            <div className="flex items-center space-x-2 text-[10px] tracking-wider uppercase font-mono text-green-400/80">
-              <ShieldCheck className="w-4 h-4 text-green-400" />
-              <span>Toko Buku Tepercaya di Cianjur</span>
+
+            <div className="space-y-4 pt-2">
+              {/* Address */}
+              <div className="flex items-start space-x-3 text-xs text-green-200/80">
+                <MapPin className="w-4 h-4 text-cream-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block font-bold text-white uppercase text-[9px] tracking-wider mb-0.5">Alamat</span>
+                  <p className="font-light leading-relaxed">Jl. Siti Jenab No.10, Pamoyanan, Cianjur</p>
+                </div>
+              </div>
+
+              {/* Contacts */}
+              <div className="flex items-start space-x-3 text-xs text-green-200/80">
+                <Phone className="w-4 h-4 text-cream-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block font-bold text-white uppercase text-[9px] tracking-wider mb-0.5">WhatsApp</span>
+                  <button onClick={openWhatsApp} className="font-semibold text-cream-300 hover:text-white cursor-pointer transition-colors">
+                    +62 812-3456-7890
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Nav Links */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
+          {/* Quick Links Column */}
+          <div className="lg:col-span-3 grid grid-cols-2 gap-8 lg:pl-6">
             <div className="space-y-4">
-              <h4 className="text-[10px] tracking-widest font-bold uppercase px-3 py-1.5 rounded-md inline-block text-green-950 bg-green-400">Navigasi</h4>
+              <h4 className="text-[10px] tracking-widest text-cream-400 font-bold uppercase border-b border-green-800/40 pb-2">
+                Menu
+              </h4>
               <ul className="space-y-3">
-                {[["#home","Beranda"],["#about","Tentang"],["#services","Kategori"],["#catalog","Katalog"]].map(([href,label]) => (
-                  <li key={href}><a href={href} onClick={(e) => handleLinkClick(e, href)} className="text-xs text-green-400/70 hover:text-white transition-colors">{label}</a></li>
+                {[
+                  ["#home", "Beranda"],
+                  ["#about", "Tentang"],
+                  ["#why-us", "Kelebihan"],
+                  ["#collection", "Koleksi Buku"]
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <a 
+                      href={href} 
+                      onClick={(e) => handleLinkClick(e, href)} 
+                      className="text-xs text-green-200/70 hover:text-white transition-colors"
+                    >
+                      {label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
+
             <div className="space-y-4">
-              <h4 className="text-[10px] tracking-widest text-green-400 font-bold uppercase border-b border-green-700/30 pb-2">Lainnya</h4>
+              <h4 className="text-[10px] tracking-widest text-cream-400 font-bold uppercase border-b border-green-800/40 pb-2">
+                Kontak
+              </h4>
               <ul className="space-y-3">
-                {[["#testimonials","Ulasan"],["#contact","Kontak"]].map(([href,label]) => (
-                  <li key={href}><a href={href} onClick={(e) => handleLinkClick(e, href)} className="text-xs text-green-400/70 hover:text-white transition-colors">{label}</a></li>
-                ))}
+                <li>
+                  <button 
+                    onClick={openWhatsApp}
+                    className="text-xs text-green-200/70 hover:text-white transition-colors cursor-pointer text-left"
+                  >
+                    WhatsApp
+                  </button>
+                </li>
+                <li>
+                  <a 
+                    href="https://instagram.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-xs text-green-200/70 hover:text-white transition-colors flex items-center space-x-1"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                    <span>Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="mailto:info@kiosbukucianjur.com" 
+                    className="text-xs text-green-200/70 hover:text-white transition-colors"
+                  >
+                    Email
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-[10px] tracking-widest text-green-400 font-bold uppercase border-b border-green-700/30 pb-2">Info Diskon & Promo</h4>
-            <p className="text-xs leading-relaxed font-light text-green-400/60">Daftarkan email untuk info diskon dan promo buku terbaru.</p>
-            <form onSubmit={handleSubscribe} className="relative mt-2">
-              <input id="newsletter-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Alamat email..." className="w-full rounded-full pl-6 pr-12 py-3 text-xs focus:outline-none bg-white/5 border border-green-700/30 text-white placeholder-green-600/50 focus:border-green-500/40" />
-              <button id="newsletter-submit" type="submit" className="absolute right-1.5 top-1.5 p-2 bg-green-500 hover:bg-green-400 text-green-950 rounded-full transition-colors cursor-pointer" aria-label="Daftar">
-                {subscribed ? <Check className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
-              </button>
-            </form>
-            <AnimatePresence>
-              {subscribed && (
-                <motion.span className="block text-[10px] text-green-400 font-medium tracking-wide" initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}>
-                  Berhasil! Anda akan mendapat info promo terbaru.
-                </motion.span>
-              )}
-            </AnimatePresence>
+          {/* Interactive Map Column */}
+          <div className="lg:col-span-5 space-y-4">
+            <h4 className="text-[10px] tracking-widest text-cream-400 font-bold uppercase border-b border-green-800/40 pb-2">
+              Peta Lokasi
+            </h4>
+            <div className="rounded-2xl overflow-hidden aspect-[16/9] relative border border-green-800/50 bg-green-950">
+              <iframe 
+                title="Lokasi Kios Buku Masjid Agung Cianjur" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.597394017688!2d107.13969477589332!3d-6.818709366695277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6852e25ad7c393%3A0xcad88d30e303cf6a!2sMasjid%20Agung%20Cianjur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: "grayscale(0.1) contrast(1.05)" }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade" 
+              />
+            </div>
+            <span className="block text-[9px] text-green-200/40 font-mono text-center lg:text-left">
+              Berlokasi tepat di samping kompleks Masjid Agung Cianjur
+            </span>
           </div>
+
         </div>
 
+        {/* Separator */}
         <div className="h-[1px] w-full bg-green-800/30" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] font-mono tracking-wider text-green-500/50">
+        {/* Copyright Section */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] font-mono tracking-wider text-green-200/40">
           <div className="space-y-1 text-center sm:text-left">
-            <span>&copy; {new Date().getFullYear()} KIOS BUKU MASJID AGUNG CIANJUR.</span>
-            <span className="block text-[9px] opacity-75">LAYANAN BUKU TERLENGKAP DI PUSAT KOTA CIANJUR.</span>
+            <span>&copy; {new Date().getFullYear()} Kios Buku Masjid Agung Cianjur.</span>
+            <span className="block text-[9px] opacity-75">Toko Buku Islami & Umum Tepercaya.</span>
           </div>
           <div className="flex items-center space-x-6">
-            <span className="hover:text-green-300 transition-colors cursor-pointer">KEBIJAKAN PRIVASI</span>
-            <span>&middot;</span>
-            <span className="hover:text-green-300 transition-colors cursor-pointer">SYARAT & KETENTUAN</span>
+            <a href="#home" onClick={handleScrollToTop} className="hover:text-white transition-colors flex items-center space-x-1 cursor-pointer">
+              <span>Kembali ke Atas</span>
+              <ArrowUp className="w-3 h-3" />
+            </a>
           </div>
         </div>
+
       </div>
     </footer>
   );

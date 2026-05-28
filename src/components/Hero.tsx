@@ -1,65 +1,70 @@
 import React from "react";
-import { ArrowRight, ChevronDown, Sparkle } from "lucide-react";
+import { ArrowRight, MessageSquare, ChevronDown, Sparkle } from "lucide-react";
 import { motion } from "motion/react";
 
 interface HeroProps {
   onExploreClick: () => void;
-  onCatalogClick: () => void;
+  onContactClick: () => void;
 }
 
-export default function Hero({ onExploreClick, onCatalogClick }: HeroProps) {
+export default function Hero({ onExploreClick, onContactClick }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-b from-green-50 via-cream-50 to-cream-50"
+      className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden"
     >
-      {/* Abstract Glowing Aura */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full bg-green-400/10 blur-[130px] animate-pulse-slow"></div>
-        <div className="absolute bottom-[10%] right-[10%] w-[250px] sm:w-[450px] h-[250px] sm:h-[450px] rounded-full bg-green-200/10 blur-[100px] animate-pulse"></div>
+      {/* Background Image of Warm Bookshelves */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://file.garden/aeR7U68tEBuDFww4/2021-10-07.png"
+          alt="Suasana Rak Buku Kayu yang Hangat"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.4] contrast-[1.05]"
+          referrerPolicy="no-referrer"
+        />
+        {/* Deep, warm gradient overlay fading into the cream background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-green-950/80 via-green-950/60 to-cream-50" />
+
         {/* Subtle dot pattern */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#16a34a_1px,transparent_1px)] bg-[size:32px_32px]" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:32px_32px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center flex flex-col items-center pt-12 pb-16">
-        
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center flex flex-col items-center pt-16 pb-20">
+
         {/* Badge */}
         <motion.div
           id="hero-badge"
-          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-green-300/50 bg-green-50 text-green-800 mb-8 shadow-sm cursor-default"
+          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-cream-100 mb-8 shadow-sm cursor-default"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Sparkle className="w-3.5 h-3.5 text-green-500 animate-spin" style={{ animationDuration: '6s' }} />
+          <Sparkle className="w-3.5 h-3.5 text-cream-400 animate-spin" style={{ animationDuration: '6s' }} />
           <span className="text-[10px] tracking-[0.3em] uppercase font-bold font-sans">
-            Toko Buku Terlengkap di Cianjur
+            LITERASI ISLAMI & KLASIK BOOKSTORE
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline (Playfair Display) */}
         <motion.h1
           id="hero-headline"
-          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.03em] leading-[1.15] mb-8 max-w-5xl text-green-950"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.02em] leading-[1.15] mb-8 max-w-5xl text-white"
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
         >
           Kios Buku <br />
-          <span className="text-green-gradient font-extrabold">Masjid Agung Cianjur</span>
+          <span className="text-cream-400 font-extrabold">Masjid Agung Cianjur</span>
         </motion.h1>
 
-        {/* Subheadline */}
+        {/* Subheadline (Inter/Poppins) */}
         <motion.p
           id="hero-subheadline"
-          className="font-sans text-sm sm:text-base md:text-lg max-w-2xl font-light tracking-wide leading-relaxed mb-12 text-green-800/70"
+          className="font-sans text-sm sm:text-base md:text-lg max-w-2xl font-light tracking-wide leading-relaxed mb-12 text-cream-100/80"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          Destinasi utama pencinta buku di Cianjur. Berlokasi strategis di samping Masjid Agung, 
-          kami menyediakan koleksi lengkap dari kitab Islami, Al-Qur'an, novel, buku sekolah, 
-          hingga buku pengembangan diri — semua 100% original.
+          Tempat bertemunya literasi, inspirasi, dan kecintaan pada buku di jantung Kota Cianjur.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -75,49 +80,49 @@ export default function Hero({ onExploreClick, onCatalogClick }: HeroProps) {
             onClick={onExploreClick}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-green-600 hover:bg-green-700 text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] cursor-pointer shadow-[0_4px_25px_rgba(22,163,74,0.3)] shine-hover"
           >
-            Jelajahi Koleksi
+            Jelajahi Koleksi Buku
           </button>
 
           <button
-            id="hero-cta-catalog"
-            onClick={onCatalogClick}
-            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-8 py-4 rounded-full border border-green-300 hover:border-green-500 hover:bg-green-50 text-green-800 transition-all duration-300 active:scale-[0.98] cursor-pointer"
+            id="hero-cta-contact"
+            onClick={onContactClick}
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-8 py-4 rounded-full border border-white/40 hover:border-white hover:bg-white/10 text-white transition-all duration-300 active:scale-[0.98] cursor-pointer backdrop-blur-sm"
           >
-            <span>Lihat Katalog</span>
-            <ArrowRight className="w-3.5 h-3.5 text-green-500" />
+            <span>Hubungi Kami</span>
+            <MessageSquare className="w-3.5 h-3.5 text-cream-300" />
           </button>
         </motion.div>
 
         {/* Stats */}
         <motion.div
           id="hero-substats"
-          className="grid grid-cols-3 gap-6 sm:gap-12 md:gap-16 pt-10 border-t border-green-200/60 w-full max-w-3xl text-center"
+          className="grid grid-cols-3 gap-6 sm:gap-12 md:gap-16 pt-10 border-t border-white/10 w-full max-w-3xl text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
         >
           <div>
-            <span className="block text-xl sm:text-2xl font-bold font-sans text-green-600">
+            <span className="block text-xl sm:text-2xl font-bold font-sans text-cream-400">
               100%
             </span>
-            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-green-700/60">
+            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-cream-200/60 font-medium">
               Buku Original
             </span>
           </div>
-          <div className="border-x px-2 border-green-200/50">
-            <span className="block text-xl sm:text-2xl font-bold font-sans text-green-600">
-              Strategis
+          <div className="border-x px-2 border-white/10">
+            <span className="block text-xl sm:text-2xl font-bold font-sans text-cream-400">
+              Klasik
             </span>
-            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-green-700/60">
-              Area Masjid Agung
+            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-cream-200/60 font-medium">
+              Suasana Nyaman
             </span>
           </div>
           <div>
-            <span className="block text-xl sm:text-2xl font-bold font-sans text-green-600">
+            <span className="block text-xl sm:text-2xl font-bold font-sans text-cream-400">
               Lengkap
             </span>
-            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-green-700/60">
-              Kitab & Umum
+            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-cream-200/60 font-medium">
+              Islami & Umum
             </span>
           </div>
         </motion.div>
@@ -126,7 +131,7 @@ export default function Hero({ onExploreClick, onCatalogClick }: HeroProps) {
         <motion.a
           id="hero-scroll-btn"
           href="#about"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 rounded-full border border-green-200 text-green-400 hover:text-green-600 hover:border-green-400 transition-all hidden md:flex items-center justify-center cursor-pointer animate-float"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 rounded-full border border-white/20 text-cream-300 hover:text-white hover:border-white/40 transition-all hidden md:flex items-center justify-center cursor-pointer animate-float"
           aria-label="Scroll to About Section"
           whileHover={{ scale: 1.1 }}
         >
