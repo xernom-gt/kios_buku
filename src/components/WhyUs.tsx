@@ -20,7 +20,7 @@ export default function WhyUs() {
       <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-cream-300/20 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-green-200/10 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
@@ -41,7 +41,7 @@ export default function WhyUs() {
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {WHY_US.map((item, index) => (
             <motion.div
               key={item.id}

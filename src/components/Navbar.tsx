@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import logoImg from "../assets/logo.webp";
+import { getWhatsAppLink } from "../utils/safety";
 
 interface NavbarProps {
   activeSection: string;
@@ -64,8 +66,8 @@ export default function Navbar({ activeSection }: NavbarProps) {
             onClick={(e) => handleLinkClick(e, "#home")}
             className="flex items-center space-x-2 group"
           >
-            <div className="w-8 h-8 bg-gradient-to-tr from-green-600 to-green-400 rounded-lg flex items-center justify-center transition-transform duration-700 shadow-[0_0_15px_rgba(22,163,74,0.25)] shrink-0">
-              <span className="text-white font-display font-bold text-sm">ك</span>
+            <div className="w-9 h-9 rounded-lg overflow-hidden border border-cream-300/30 flex items-center justify-center transition-transform duration-700 shrink-0 bg-white shadow-sm">
+              <img src={logoImg} alt="Logo Kios Buku" className="w-full h-full object-contain p-0.5" />
             </div>
             <div className="flex flex-col leading-tight">
               <span className={`font-display font-bold text-[13px] sm:text-[14px] tracking-[0.15em] transition-colors ${
@@ -119,7 +121,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
           <div className="flex items-center space-x-3">
             <a
               id="nav-cta-primary"
-              href="https://wa.me/6281234567890"
+              href={getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku.")}
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:flex items-center space-x-1.5 px-5 py-2.5 rounded-full text-[10px] tracking-widest uppercase font-bold transition-all cursor-pointer group ${
@@ -184,7 +186,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
 
               {/* Mobile CTA */}
               <a
-                href="https://wa.me/6281234567890"
+                href={getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 px-8 py-3.5 rounded-full bg-green-600 text-white text-xs tracking-widest uppercase font-bold shadow-lg"

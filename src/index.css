@@ -32,6 +32,10 @@
   --color-cream-900: #4e3317;
   --color-cream-950: #331e0c;
 
+  /* Brand red accent colors matching the logo ribbons */
+  --color-brand-red: #c21a22;
+  --color-brand-red-hover: #a51219;
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-glow-pulse: glow-pulse 3s infinite alternate;

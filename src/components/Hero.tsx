@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight, MessageSquare, ChevronDown, Sparkle } from "lucide-react";
 import { motion } from "motion/react";
+import bgImg from "../assets/doc_landscape_1.webp";
 
 interface HeroProps {
   onExploreClick: () => void;
@@ -16,13 +17,12 @@ export default function Hero({ onExploreClick, onContactClick }: HeroProps) {
       {/* Background Image of Warm Bookshelves */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://file.garden/aeR7U68tEBuDFww4/2021-10-07.png"
+          src={bgImg}
           alt="Suasana Rak Buku Kayu yang Hangat"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.4] contrast-[1.05]"
-          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.25] contrast-[1.05]"
         />
-        {/* Deep, warm gradient overlay fading into the cream background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-green-950/80 via-green-950/60 to-cream-50" />
+        {/* Deep, warm gradient overlay fading into a darker green-950 at the bottom for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-green-950/90 via-green-950/80 to-green-950/60" />
 
         {/* Subtle dot pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:32px_32px]" />
@@ -33,7 +33,7 @@ export default function Hero({ onExploreClick, onContactClick }: HeroProps) {
         {/* Badge */}
         <motion.div
           id="hero-badge"
-          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-cream-100 mb-8 shadow-sm cursor-default"
+          className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-brand-red bg-brand-red/10 backdrop-blur-md text-cream-100 mb-8 shadow-[0_0_15px_rgba(194,26,34,0.3)] cursor-default"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -96,32 +96,32 @@ export default function Hero({ onExploreClick, onContactClick }: HeroProps) {
         {/* Stats */}
         <motion.div
           id="hero-substats"
-          className="grid grid-cols-3 gap-6 sm:gap-12 md:gap-16 pt-10 border-t border-white/10 w-full max-w-3xl text-center"
+          className="grid grid-cols-3 gap-2 sm:gap-12 md:gap-16 pt-8 sm:pt-10 border-t border-white/15 w-full max-w-3xl text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          <div>
-            <span className="block text-xl sm:text-2xl font-bold font-sans text-cream-400">
+          <div className="px-1 sm:px-0">
+            <span className="block text-lg sm:text-2xl font-bold font-sans text-cream-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
               100%
             </span>
-            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-cream-200/60 font-medium">
+            <span className="block text-[8px] sm:text-xs tracking-wider sm:tracking-widest uppercase text-cream-100/80 font-medium mt-0.5 sm:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
               Buku Original
             </span>
           </div>
-          <div className="border-x px-2 border-white/10">
-            <span className="block text-xl sm:text-2xl font-bold font-sans text-cream-400">
+          <div className="border-x px-1 sm:px-2 border-white/15">
+            <span className="block text-lg sm:text-2xl font-bold font-sans text-cream-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
               Klasik
             </span>
-            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-cream-200/60 font-medium">
+            <span className="block text-[8px] sm:text-xs tracking-wider sm:tracking-widest uppercase text-cream-100/80 font-medium mt-0.5 sm:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
               Suasana Nyaman
             </span>
           </div>
-          <div>
-            <span className="block text-xl sm:text-2xl font-bold font-sans text-cream-400">
+          <div className="px-1 sm:px-0">
+            <span className="block text-lg sm:text-2xl font-bold font-sans text-cream-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
               Lengkap
             </span>
-            <span className="text-[10px] sm:text-xs tracking-widest uppercase text-cream-200/60 font-medium">
+            <span className="block text-[8px] sm:text-xs tracking-wider sm:tracking-widest uppercase text-cream-100/80 font-medium mt-0.5 sm:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
               Islami & Umum
             </span>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUp } from "lucide-react";
+import { getWhatsAppLink } from "./utils/safety";
 
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
@@ -132,7 +133,7 @@ export default function App() {
             {/* WhatsApp shortcut */}
             <motion.a
               id="sticky-whatsapp-utility"
-              href="https://wa.me/6281234567890?text=Halo%20Kios%20Buku%20Masjid%20Agung%20Cianjur%2C%20saya%20tertarik%20memesan%20buku."
+              href={getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya tertarik memesan buku.")}
               target="_blank"
               rel="noopener noreferrer"
               className="p-4 rounded-full bg-green-600 hover:bg-green-500 text-white shadow-[0_4px_20px_rgba(26,92,68,0.35)] transition-all flex items-center justify-center cursor-pointer relative group"

@@ -1,5 +1,7 @@
 import React from "react";
-import { MapPin, Phone, Instagram, Mail, ArrowUp } from "lucide-react";
+import { MapPin, Phone, Instagram, ArrowUp } from "lucide-react";
+import logoImg from "../assets/logo.webp";
+import { getWhatsAppLink, getWhatsAppDisplayNumber, getInstagramLink } from "../utils/safety";
 
 export default function Footer() {
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -19,7 +21,7 @@ export default function Footer() {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/6281234567890?text=Halo%20Kios%20Buku%20Masjid%20Agung%20Cianjur%2C%20saya%20ingin%20bertanya%20mengenai%20koleksi%20buku.", "_blank");
+    window.open(getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya ingin bertanya mengenai koleksi buku."), "_blank");
   };
 
   return (
@@ -35,8 +37,8 @@ export default function Footer() {
           {/* Brand & Address Column */}
           <div className="lg:col-span-4 space-y-6">
             <a id="footer-logo" href="#home" onClick={handleScrollToTop} className="flex items-center space-x-2.5">
-              <div className="w-8 h-8 bg-gradient-to-tr from-cream-400 to-cream-600 rounded-lg flex items-center justify-center shadow-md shrink-0">
-                <span className="text-green-950 font-display font-bold text-sm">ك</span>
+              <div className="w-9 h-9 rounded-lg overflow-hidden border border-cream-300/30 flex items-center justify-center shadow-md shrink-0 bg-white p-0.5">
+                <img src={logoImg} alt="Logo Kios Buku" className="w-full h-full object-contain" />
               </div>
               <span className="font-display font-bold text-sm tracking-[0.2em] text-white hover:text-cream-400 transition-colors uppercase">
                 Kios Buku Masjid Agung
@@ -63,7 +65,7 @@ export default function Footer() {
                 <div>
                   <span className="block font-bold text-white uppercase text-[9px] tracking-wider mb-0.5">WhatsApp</span>
                   <button onClick={openWhatsApp} className="font-semibold text-cream-300 hover:text-white cursor-pointer transition-colors">
-                    +62 812-3456-7890
+                    {getWhatsAppDisplayNumber()}
                   </button>
                 </div>
               </div>
@@ -111,21 +113,13 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="https://instagram.com" 
+                    href={getInstagramLink()} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-xs text-green-200/70 hover:text-white transition-colors flex items-center space-x-1"
                   >
                     <Instagram className="w-3.5 h-3.5" />
                     <span>Instagram</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="mailto:info@kiosbukucianjur.com" 
-                    className="text-xs text-green-200/70 hover:text-white transition-colors"
-                  >
-                    Email
                   </a>
                 </li>
               </ul>

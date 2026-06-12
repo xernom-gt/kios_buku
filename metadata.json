@@ -1,6 +1,6 @@
 {
-  "name": "Luxury Company Profile",
-  "description": "Landing page profile perusahaan bernuansa premium, modern, dan luxury dengan navigasi interaktif, katalog produk, portfolio karya, testimonials slider, dan responsive mobile yang sempurna.",
+  "name": "Kios Buku Masjid Agung Cianjur",
+  "description": "Landing page Kios Buku Masjid Agung Cianjur - Toko Buku Islami & Umum Terlengkap dan Original di Cianjur.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
