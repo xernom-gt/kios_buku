@@ -1,9 +1,23 @@
 import React from "react";
 import { MapPin, Phone, Instagram, ArrowUp } from "lucide-react";
 import logoImg from "../assets/logo.webp";
-import { getWhatsAppLink, getWhatsAppDisplayNumber, getInstagramLink } from "../utils/safety";
+
 
 export default function Footer() {
+  const getWhatsAppDisplayNumber = () => {
+    const envDisplay = import.meta.env.VITE_WA_DISPLAY_NUMBER;
+    if (envDisplay) return envDisplay;
+
+    const num = (import.meta.env.VITE_WA_NUMBER || "6281775221400").replace(/\D/g, "");
+    if (num.startsWith("62") && num.length >= 11) {
+      return `+${num.slice(0, 2)} ${num.slice(2, 5)}-${num.slice(5, 9)}-${num.slice(9)}`;
+    }
+    if (num.startsWith("08") && num.length >= 10) {
+      return `${num.slice(0, 4)}-${num.slice(4, 8)}-${num.slice(8)}`;
+    }
+    return num;
+  };
+
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -21,7 +35,8 @@ export default function Footer() {
   };
 
   const openWhatsApp = () => {
-    window.open(getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya ingin bertanya mengenai koleksi buku."), "_blank");
+    const waNumber = import.meta.env.VITE_WA_NUMBER || "6281775221400";
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent("Halo Kios Buku Masjid Agung Cianjur, saya ingin bertanya mengenai koleksi buku.")}`, "_blank");
   };
 
   return (
@@ -113,7 +128,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href={getInstagramLink()} 
+                    href={import.meta.env.VITE_INSTAGRAM_URL || "https://instagram.com/kios_buku"} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-xs text-green-200/70 hover:text-white transition-colors flex items-center space-x-1"

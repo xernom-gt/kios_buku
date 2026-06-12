@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import logoImg from "../assets/logo.webp";
-import { getWhatsAppLink } from "../utils/safety";
 
 interface NavbarProps {
   activeSection: string;
@@ -121,7 +120,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
           <div className="flex items-center space-x-3">
             <a
               id="nav-cta-primary"
-              href={getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku.")}
+              href={`https://wa.me/${import.meta.env.VITE_WA_NUMBER || "6281775221400"}?text=${encodeURIComponent("Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:flex items-center space-x-1.5 px-5 py-2.5 rounded-full text-[10px] tracking-widest uppercase font-bold transition-all cursor-pointer group ${
@@ -186,7 +185,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
 
               {/* Mobile CTA */}
               <a
-                href={getWhatsAppLink("Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku.")}
+                href={`https://wa.me/${import.meta.env.VITE_WA_NUMBER || "6281775221400"}?text=${encodeURIComponent("Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 px-8 py-3.5 rounded-full bg-green-600 text-white text-xs tracking-widest uppercase font-bold shadow-lg"

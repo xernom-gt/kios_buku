@@ -5,7 +5,6 @@ import {
   CalendarDays, Hash, User, Baby, MessageSquare, TrendingUp, Star, Compass, ArrowRight 
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { getWhatsAppLink } from "../utils/safety";
 
 interface CategoryInfo {
   name: string;
@@ -94,7 +93,8 @@ export default function Catalog() {
 
   const handleOrder = (book: Product) => {
     const text = `Halo Kios Buku Masjid Agung Cianjur, saya ingin memesan buku: "${book.name}" karya ${getAuthor(book)}. Apakah stoknya masih tersedia?`;
-    window.open(getWhatsAppLink(text), "_blank");
+    const waNumber = import.meta.env.VITE_WA_NUMBER || "6281775221400";
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (
