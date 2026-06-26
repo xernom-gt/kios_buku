@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="border-t border-cream-200 bg-green-950 text-white pt-20 pb-12 font-sans relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-[80%] left-[50%] -translate-x-1/2 w-[350px] h-[350px] rounded-full bg-green-700/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[80%] left-[50%] -translate-x-1/2 w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] rounded-full bg-green-700/10 blur-[60px] sm:blur-[120px] pointer-events-none will-change-transform" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-16">
         

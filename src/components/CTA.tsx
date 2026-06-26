@@ -12,7 +12,7 @@ export default function CTA({ onKunjungiClick }: CTAProps) {
       
       {/* Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[650px] h-[340px] sm:h-[650px] rounded-full bg-cream-300/20 blur-[130px] animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[650px] h-[250px] sm:h-[650px] rounded-full bg-cream-300/20 blur-[60px] sm:blur-[130px] animate-pulse-slow will-change-transform"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 w-full">

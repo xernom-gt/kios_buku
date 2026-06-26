@@ -7,7 +7,7 @@ export default function Quote() {
     <section className="py-24 relative overflow-hidden bg-cream-100 border-y border-cream-200/50">
       {/* Background soft glow */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-cream-300/30 blur-[130px] animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[600px] h-[250px] sm:h-[600px] rounded-full bg-cream-300/30 blur-[60px] sm:blur-[130px] animate-pulse-slow will-change-transform"></div>
         {/* Fine background dot texture */}
         <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1a5c44_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>

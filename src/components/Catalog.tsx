@@ -100,8 +100,8 @@ export default function Catalog() {
   return (
     <section id="collection" className="py-24 relative overflow-hidden bg-cream-50">
       {/* Background soft blur decoration */}
-      <div className="absolute top-[20%] left-[-15%] w-[450px] h-[450px] rounded-full bg-cream-300/30 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-15%] w-[450px] h-[450px] rounded-full bg-green-100/25 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[20%] left-[-15%] w-[250px] h-[250px] sm:w-[450px] sm:h-[450px] rounded-full bg-cream-300/30 blur-[60px] sm:blur-[120px] pointer-events-none will-change-transform" />
+      <div className="absolute bottom-[20%] right-[-15%] w-[250px] h-[250px] sm:w-[450px] sm:h-[450px] rounded-full bg-green-100/25 blur-[60px] sm:blur-[120px] pointer-events-none will-change-transform" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 space-y-12 sm:space-y-16">
         

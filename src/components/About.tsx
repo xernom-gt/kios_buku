@@ -17,8 +17,8 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-white">
       {/* Background ambient accents */}
-      <div className="absolute top-[10%] left-[-10%] w-[380px] h-[380px] rounded-full bg-cream-100/60 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[300px] h-[300px] rounded-full bg-green-50/40 blur-[100px] pointer-events-none" />
+      <div className="absolute top-[10%] left-[-10%] w-[200px] h-[200px] sm:w-[380px] sm:h-[380px] rounded-full bg-cream-100/60 blur-[60px] sm:blur-[120px] pointer-events-none will-change-transform" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-full bg-green-50/40 blur-[60px] sm:blur-[100px] pointer-events-none will-change-transform" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">

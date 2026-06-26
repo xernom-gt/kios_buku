@@ -17,8 +17,8 @@ export default function WhyUs() {
   return (
     <section id="why-us" className="py-24 relative overflow-hidden bg-cream-100/50">
       {/* Background Soft Accent */}
-      <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-cream-300/20 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-green-200/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[20%] right-[-10%] w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full bg-cream-300/20 blur-[60px] sm:blur-[100px] pointer-events-none will-change-transform" />
+      <div className="absolute bottom-[10%] left-[-10%] w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full bg-green-200/10 blur-[60px] sm:blur-[120px] pointer-events-none will-change-transform" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         

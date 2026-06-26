@@ -35,7 +35,7 @@ export default function Loader({ onComplete }: LoaderProps) {
       transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
     >
       {/* Background ambient green glow */}
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-green-500/15 blur-[120px] -translate-x-1/2 -translate-y-1/2 rounded-full animate-pulse-slow"></div>
+      <div className="absolute top-1/2 left-1/2 w-48 h-48 sm:w-64 sm:h-64 bg-green-500/15 blur-[60px] sm:blur-[120px] -translate-x-1/2 -translate-y-1/2 rounded-full animate-pulse-slow will-change-transform"></div>
 
       <div className="relative flex flex-col items-center max-w-xs w-full px-4">
         {/* Animated Brand Mark */}
