@@ -19,10 +19,12 @@ export default function Hero({ onExploreClick, onContactClick }: HeroProps) {
         <img
           src={bgImg}
           alt="Suasana Rak Buku Kayu yang Hangat"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.25] contrast-[1.05]"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-[1.1] saturate-[1.15]"
         />
-        {/* Deep, warm gradient overlay fading into a darker green-950 at the bottom for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-green-950/90 via-green-950/80 to-green-950/60" />
+        {/* Warm gradient overlay — lighter at edges, deeper center for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/55 via-green-800/65 to-green-950/80" />
+        {/* Secondary warm diagonal tint for depth */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-cream-950/15 via-transparent to-green-700/10" />
 
         {/* Subtle dot pattern */}
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:32px_32px]" />
